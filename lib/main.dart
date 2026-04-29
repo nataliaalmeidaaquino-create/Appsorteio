@@ -5,7 +5,7 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color.fromARGB(255, 243, 198, 221),
+        primaryColor: const Color.fromARGB(255, 245, 165, 206),
 
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color.fromARGB(255, 168, 227, 231),
@@ -14,7 +14,7 @@ void main() {
         appBarTheme: const AppBarTheme(
           elevation: 0,
           centerTitle: true,
-          backgroundColor: Color.fromARGB(255, 189, 141, 199),
+          backgroundColor: Color.fromARGB(255, 223, 164, 235),
           foregroundColor: Colors.white,
           titleTextStyle: TextStyle(
             fontSize: 20,
@@ -44,12 +44,12 @@ final List<String> _opcoes = [];
 
 final Random _random = Random();
 
-static const Color _rosa = Color.fromARGB(255, 232, 173, 238);
-static const Color _rosaClaro = Color.fromARGB(255, 215, 129, 209);
-static const Color _rosaMedia = Color.fromARGB(255, 231, 133, 236);
-static const Color _cinza = Color.fromARGB(255, 224, 171, 245);
-static const Color _roxao = Color.fromARGB(255, 180, 88, 177);
-static const Color _verde = Color.fromARGB(255, 222, 184, 231);
+static const Color _roxo = Color.fromARGB(255, 219, 117, 233);
+static const Color _roxoClaro = Color.fromARGB(255, 232, 135, 226);
+static const Color _roxoMedio = Color.fromARGB(255, 231, 133, 236);
+static const Color _cinza = Color.fromARGB(255, 208, 118, 244);
+static const Color _vermelho = Color.fromARGB(255, 226, 122, 247);
+static const Color _verde = Color.fromARGB(255, 226, 126, 249);
 
 // coress declaration
 
@@ -132,7 +132,7 @@ void _removerOpcao(int index){
 @override
  Widget build(BuildContext context) {
    return Scaffold(
-     backgroundColor: _rosaClaro,
+     backgroundColor: _roxoClaro,
  
      appBar: AppBar(
        title: const Text('🎲 Sorteador de Decisões'),
@@ -193,7 +193,7 @@ void _removerOpcao(int index){
                height: 160,
                fit: BoxFit.cover,
                errorBuilder: (_, __, ___) => Container(
-                 height: 160, color: _rosaMedia,
+                 height: 160, color: _roxoMedio,
                  child: const Center(child: Text('🎲', style: TextStyle(fontSize: 64))),
                ),
              ),
@@ -211,7 +211,7 @@ void _removerOpcao(int index){
                hintStyle: const TextStyle(color: Color(0xFFBBBBBB)),
                labelText: 'Nova opção',
                labelStyle: const TextStyle(color: _cinza),
-               prefixIcon: const Icon(Icons.add_circle_outline, color: _rosa),
+               prefixIcon: const Icon(Icons.add_circle_outline, color: _roxo),
                suffixIcon: _opcaoController.text.isNotEmpty
                    ? IconButton(icon: const Icon(Icons.clear, color: _cinza), onPressed: () => setState(() { _opcaoController.clear(); _erroTexto = null; }))
                    : null,
@@ -219,7 +219,7 @@ void _removerOpcao(int index){
                filled: true,
                fillColor: Colors.white,
                enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide(color: _erroTexto != null ? _vermelho : const Color(0xFFDDDDDD), width: 1.5)),
-               focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: _rosa, width: 2.0)),
+               focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: _roxo, width: 2.0)),
                errorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: _vermelho, width: 1.5)),
                focusedErrorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: _vermelho, width: 2.0)),
              ),
@@ -258,8 +258,8 @@ void _removerOpcao(int index){
                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFEEEEEE))),
                    child: ListTile(
                      leading: CircleAvatar(
-                       backgroundColor: _rosaMedia,
-                       child: Text('${index + 1}', style: const TextStyle(color: _rosa, fontWeight: FontWeight.bold)),
+                       backgroundColor: _roxoMedio,
+                       child: Text('${index + 1}', style: const TextStyle(color: _roxo, fontWeight: FontWeight.bold)),
                      ),
                      title: Text(_opcoes[index], style: const TextStyle(fontSize: 15)),
                      trailing: IconButton(
@@ -285,13 +285,13 @@ void _removerOpcao(int index){
                style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold, letterSpacing: 1),
              ),
              style: ElevatedButton.styleFrom(
-               backgroundColor: _rosa,
+               backgroundColor: _roxo,
                foregroundColor: Colors.white,
                disabledBackgroundColor: const Color(0xFFBBBBBB),
                disabledForegroundColor: Colors.white,
                padding: const EdgeInsets.symmetric(vertical: 18),
                elevation: 4,
-               shadowColor: _rosa.withOpacity(0.4),
+               shadowColor: _roxo.withOpacity(0.4),
                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
              ),
            ),
@@ -331,7 +331,7 @@ void _removerOpcao(int index){
                width: 80,
                height: 80,
                decoration: BoxDecoration(
-                 color: _rosaMedia,
+                 color: _roxoMedio,
                  shape: BoxShape.circle,
                ),
                child: const Center(
@@ -355,7 +355,7 @@ void _removerOpcao(int index){
                style: const TextStyle(
                  fontSize: 28,
                  fontWeight: FontWeight.bold,
-                 color: _rosa,
+                 color: _roxo,
                ),
                textAlign: TextAlign.center,
              ),
@@ -381,7 +381,7 @@ void _removerOpcao(int index){
            ElevatedButton(
              onPressed: () => Navigator.pop(dialogContext),
              style: ElevatedButton.styleFrom(
-               backgroundColor: _rosa,
+               backgroundColor: _roxo,
                foregroundColor: Colors.white,
                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
              ),
